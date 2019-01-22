@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>rtl</title>
+</head>
+<body>
+
+<style type="text/css">
+	
+	body {
+		background-color: grey;
+	}
+
+	div {
+        width: 100%;
+        height: 200px;
+        margin: auto;
+        text-align: center;
+        position: absolute;
+		top: 0px;
+		bottom:0px;
+		left: 0;
+		right:0;
+
+	}
+
+	input {
+		border: 0;
+		background-color: white;
+		width: 290px;
+		height: 30px;
+		font-size: 30px;
+		padding: 10px;
+
+	}
+
+	::placeholder {
+
+     color:#bfbfbf;
+	}
+	.rtl {
+		direction: rtl;
+	}
+     
+
+</style>
+
+<div>
+	<input id="text" onkeyup="changetoRtl()" value="" type="text" name="test" placeholder="Search a Word">
+
+</div>
+
+<script type="text/javascript">
+
+	function changetoRtl() {
+    var arabic = /[\u0600-\u06FF]/;
+    var input  = document.getElementById("text");
+                
+             if (arabic.test(input.value)) {
+
+             	input.classList.add("rtl");
+             } else {
+             	input.classList.remove("rtl");
+             }
+
+	}
+	
+	
+
+</script>
+</body>
+</html>
